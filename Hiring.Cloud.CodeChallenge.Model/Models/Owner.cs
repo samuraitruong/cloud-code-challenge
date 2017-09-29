@@ -10,7 +10,11 @@ namespace Hiring.Cloud.CodeChallenge.Model.Models
         public Owner(List<Car> cars)
         {
             this.Cars = new List<ICar>();
-            this.Cars.AddRange(cars);
+
+            if (cars != null)
+            {
+                this.Cars.AddRange(cars);
+            }
         }
 
         [JsonProperty("name")]
