@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.0.0" />
+    <PackageReference Include="RestSharp" Version="105.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Configs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Model\Hiring.Cloud.CodeChallenge.Model.csproj" />
+    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Service\Hiring.Cloud.CodeChallenge.Service.csproj" />
+    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Common\Hiring.Cloud.CodeChallenge.Common.csproj" />
+  </ItemGroup>
+</Project>

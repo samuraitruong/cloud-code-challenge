@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.7.127" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
+    <PackageReference Include="xunit" Version="2.3.0-beta5-build3769" />
+    <PackageReference Include="xunit.runner.console" Version="2.3.0-beta5-build3769" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.0-beta5-build3769" />
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Common\Hiring.Cloud.CodeChallenge.Common.csproj" />
+    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Model\Hiring.Cloud.CodeChallenge.Model.csproj" />
+    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Service\Hiring.Cloud.CodeChallenge.Service.csproj" />
+    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.MVC\Hiring.Cloud.CodeChallenge.MVC.csproj" />
+  </ItemGroup>
+</Project>
