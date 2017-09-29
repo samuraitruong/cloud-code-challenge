@@ -1,7 +1,4 @@
 
-
-
-
 # build
 [Oo]bj/
 [Bb]in/
@@ -328,4 +325,3 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
->>>>>>> 66a5072072173e9ba09a947d29325bb1d097eaf9
