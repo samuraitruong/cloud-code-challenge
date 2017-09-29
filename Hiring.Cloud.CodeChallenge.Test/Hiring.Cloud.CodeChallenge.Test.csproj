@@ -14,7 +14,6 @@
     <PackageReference Include="xunit" Version="2.3.0-beta5-build3769" />
     <PackageReference Include="xunit.runner.console" Version="2.3.0-beta5-build3769" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.0-beta5-build3769" />
-    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,5 +21,11 @@
     <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Model\Hiring.Cloud.CodeChallenge.Model.csproj" />
     <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Service\Hiring.Cloud.CodeChallenge.Service.csproj" />
     <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.MVC\Hiring.Cloud.CodeChallenge.MVC.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="xunit.runner.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

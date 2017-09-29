@@ -19,17 +19,8 @@ namespace Hiring.Cloud.CodeChallenge.Test
             string input = "{\"brand\":\"MG\",\"colour\":\"Blue\"}";
             var car = JsonConvert.DeserializeObject<Car>(input);
             Assert.Equal("MG", car.Brand);
-            Assert.Equal("Blue", car.Brand);
+            Assert.Equal("Blue", car.Color);
         }
-
-		[Fact]
-		public void Car_ShouldDeserialize_WhenInputValid1()
-		{
-			string input = "{\"brand\":\"MG\",\"colour\":\"Blue\"}";
-			var car = JsonConvert.DeserializeObject<Car>(input);
-			Assert.Equal("MG", car.Brand);
-			Assert.Equal("Blue", car.Brand);
-		}
 
     }
 }

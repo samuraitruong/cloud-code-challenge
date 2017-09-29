@@ -11,7 +11,7 @@ namespace Hiring.Cloud.CodeChallenge.Test
     public class ListExtention
     {
 
-		/*
+		
         
         [Fact]
         public void AddItemToDictionary_ShouldAddItem_WhenInputValid()
@@ -26,7 +26,7 @@ namespace Hiring.Cloud.CodeChallenge.Test
 
             Assert.NotNull(dict[name]);
 
-            Assert.Equal(1, dict[name].Count);
+            Assert.Single(dict[name]);
 
             Assert.True(dict[name].ContainsKey(owerName));
 		}
@@ -42,7 +42,7 @@ namespace Hiring.Cloud.CodeChallenge.Test
 			ListExtentions.AddItemToDictionary(dict, name, owerName1);
             ListExtentions.AddItemToDictionary(dict, name, owerName2);
 
-            Assert.Equal(true, dict.ContainsKey(name));
+            Assert.True(dict.ContainsKey(name));
 			Assert.NotNull(dict[name]);
 			Assert.Equal(2, dict[name].Count);
 		}
@@ -57,11 +57,11 @@ namespace Hiring.Cloud.CodeChallenge.Test
 
 			ListExtentions.AddItemToDictionary(dict, name1, owerName1);
 
-			Assert.Equal(true, dict.ContainsKey(name1));
+			Assert.True(dict.ContainsKey(name1));
 
             ListExtentions.AddItemToDictionary(dict, name2, owerName1);
 
-            Assert.Equal(true, dict.ContainsKey(name2));
+            Assert.True(dict.ContainsKey(name2));
 
             Assert.True(dict[name2].ContainsKey(owerName1));
 		}
@@ -74,7 +74,7 @@ namespace Hiring.Cloud.CodeChallenge.Test
 
 			ListExtentions.AddItemToDictionary(dict, null, owerName1);
 
-            Assert.Equal(0,dict.Keys.Count);
+            Assert.Empty(dict.Keys);
 		}
 
 		
@@ -86,14 +86,14 @@ namespace Hiring.Cloud.CodeChallenge.Test
             var name = "Toyota";
 
             ListExtentions.AddItemToDictionary(dict, name, null);
-			Assert.Equal(0,dict.Keys.Count);
+			Assert.Empty(dict.Keys);
 
             ListExtentions.AddItemToDictionary(dict, name, owerName1);
-            Assert.Equal(1, dict.Keys.Count);
-            Assert.Equal(1, dict[name].Count );
+            Assert.Single(dict.Keys);
+            Assert.Single(dict[name]);
 
             ListExtentions.AddItemToDictionary(dict, name, null);
-            Assert.Equal(1, dict[name].Count);
+            Assert.Single(dict[name]);
 		}
 		
 		[Fact]
@@ -115,13 +115,13 @@ namespace Hiring.Cloud.CodeChallenge.Test
 		{
 			List<IOwner> input = new List<IOwner>() {
 				new Owner(new List<Car>(){ new Car(){Brand= "Toyota"}}) {Name = "Truong Nguyen"},
-				new Owner(new List<Car>(){ new Car(){Brand= "Toyota"}, new Car() { Brand = "BMW" } }) {Name = "Truong Nguyen"}
+				new Owner(new List<Car>(){ new Car(){Brand= "Toyota"}, new Car() { Brand = "BMW" } }) {Name = "Jonh Doe"}
 			};
 
 			var dict = input.ToFlattenList().ToSortedDictionary();
 
 			Assert.Equal(2, dict["Toyota"].Count);
-            Assert.Equal(1, dict["BMW"].Count);
+            Assert.Single(dict["BMW"]);
 
 		}
 
@@ -149,12 +149,12 @@ namespace Hiring.Cloud.CodeChallenge.Test
 			var flatten = input.ToFlattenList();
 
             var result = flatten.First();
-			Assert.Equal(1, flatten.Count);
+			Assert.Single(flatten);
 
             Assert.Equal("Red", result.Color);
 
             Assert.Equal("Truong Nguyen", result.OwnerName);
-		}*/
+		}
 
 
 	}

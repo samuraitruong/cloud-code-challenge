@@ -8,7 +8,6 @@ namespace Hiring.Cloud.CodeChallenge.Test
         [Fact]
         public void Data()
         {
-            Assert.Equal(4, 9);
         }
     }
 }

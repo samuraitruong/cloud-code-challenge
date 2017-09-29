@@ -6,7 +6,6 @@ using Hiring.Cloud.CodeChallenge.Model.Models;
 using Hiring.Cloud.CodeChallenge.Service.Interfaces;
 using Hiring.Cloud.CodeChallenge.Common;
 using Newtonsoft.Json;
-using RestSharp;
 using System.Linq;
 using Microsoft.Extensions.Options;
 
