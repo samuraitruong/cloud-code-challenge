@@ -1,6 +1,6 @@
 # .NET Core 2.0 Sample project
 
-[![Build Status](https://travis-ci.org/samuraitruong/cloud-code-challenge.svg?branch=master)](https://travis-ci.org/samuraitruong/cloud-code-challenge)
+CI Build status: Travis CI [![Build Status](https://travis-ci.org/samuraitruong/cloud-code-challenge.svg?branch=master)](https://travis-ci.org/samuraitruong/cloud-code-challenge)
 
 # Build
 The solution can be build and run directly from Visual Studio 2017 with support .net core 2.0
