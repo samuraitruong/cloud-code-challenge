@@ -9,4 +9,6 @@ script:
 - dotnet test Hiring.Cloud.CodeChallenge.Test/Hiring.Cloud.CodeChallenge.Test.csproj
 deploy:
   provider: azure_web_apps
-
+notifications:
+  email:
+    - samuraitruong@hotmail.com
