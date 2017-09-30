@@ -1,0 +1,46 @@
+# cloud-code-challenge
+
+[![Build Status](https://travis-ci.org/samuraitruong/cloud-code-challenge.svg?branch=master)](https://travis-ci.org/samuraitruong/cloud-code-challenge)
+
+# Build
+The solution can be build and run directly from Visual Studio 2017 with support .net core 2.0
+
+If you don't have visual studio 2017 install on machine, Solution can be built with .NET core CLI
+
+`dotnet restore && dot build`
+
+Read more about (https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build?tabs=netcore2x#tabpanel_mTshLtg2eu_netcore2x ".NET Core Build")
+
+# Run
+This project is build base on .NET core 2.0 can be ran cross platform on window, Linux, Mac OS and any platform that support by .NET core CLI
+
+after build , to to output folder of MVC project
+
+`cd Hiring.Cloud.CodeChallenge/Hiring.Cloud.CodeChallenge.MVC/bin/debug/dotnetcore2.0`
+`dotnet Hiring.Cloud.CodeChallenge.MVC.dll`
+
+# Environement configs
+The configuration file is place at the configs folder, The file will pickup by global variable environment. 
+for example , to run program with Production config, we can execute below command
+
+`set ASPNETCORE_ENVIRONMENT=Development && dotnet Hiring.Cloud.CodeChallenge.MVC.dll`
+
+#Test
+The Test project is implemented with (https://xunit.github.io "XUnit") can be execute from source with Net Core CLI
+
+`dotnet test Hiring.Cloud.CodeChallenge.Test/Hiring.Cloud.CodeChallenge.Test.csproj`
+
+Test can also run wit compiled Test assembly
+`dotnet test Hiring.Cloud.CodeChallenge.Test/bin/debug/Hiring.Cloud.CodeChallenge.Test.dll`
+
+# CI & Deploy
+
+This project is pre-configure with (https://travis-ci.org "Travis CI")
+
+
+
+
+
+
+
+
