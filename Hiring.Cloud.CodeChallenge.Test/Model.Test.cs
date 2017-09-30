@@ -39,6 +39,16 @@ namespace Hiring.Cloud.CodeChallenge.Test
             Assert.Single(owner.Cars);
         }
 
+		[Fact]
+		public void Owner_ShouldDeserialize_WhenMissingName()
+		{
+			string input = "{\"cars\": [{\"brand\":\"MG\",\"colour\":\"Blue\"}]}";
+			var owner = JsonConvert.DeserializeObject<Owner>(input);
+            Assert.NotNull(owner);
+			Assert.Single(owner.Cars);
+            Assert.Equal("MG",owner.Cars[0].Brand);
+		}
+
         [Fact]
         public void Owner_ShouldDeserialize_WhenMissingCarsInInput()
         {

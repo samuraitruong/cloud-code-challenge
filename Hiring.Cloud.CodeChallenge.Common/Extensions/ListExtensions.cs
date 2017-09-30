@@ -64,5 +64,26 @@ namespace Hiring.Cloud.CodeChallenge.Common
             return new List<IData>(flattenData);
             
         }
-    }
+
+        /// <summary>
+        /// This transform will convert flatten list data to become a dictionary of form : {ownername , cars: {brand, color}}.
+        /// </summary>
+        /// <returns>an array of instance of List ex:[{ownername , cars: {brand, color}}]</returns>
+        /// <param name="data">Flatten list IList</param>
+        public static List<IOwner> ToOwnerList(this List<IData> data)
+		{
+
+            var grouped = data.GroupBy(p => p.OwnerName);
+
+            var list = grouped.Select(group => new Owner(group.Select(item => new Car() { Brand = item.BrandName, Color = item.Color }).ToList())
+            {
+                Name = group.Key,
+            });
+			
+            return new List<IOwner>(list);
+
+		}
+
+
+	}
 }
