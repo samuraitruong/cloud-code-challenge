@@ -5,7 +5,7 @@ dotnet: 2.0.0
 install:
 - dotnet restore
 script:
-- dotnet build
+- dotnet build -c release
 - dotnet test Hiring.Cloud.CodeChallenge.Test/Hiring.Cloud.CodeChallenge.Test.csproj
 deploy:
   provider: azure_web_apps
