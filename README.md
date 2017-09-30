@@ -1,6 +1,12 @@
 # .NET Core 2.0 Sample project
 
 CI Build status: Travis CI [![Build Status](https://travis-ci.org/samuraitruong/cloud-code-challenge.svg?branch=master)](https://travis-ci.org/samuraitruong/cloud-code-challenge)
+# prerequisites
+To run source code on your local machine you ned
+- git to clone source (of course) or use Download To Desktop
+- [Visual Studio 2007 (Community is Ok)](https://www.visualstudio.com/downloads/)
+- [.Net Core 2.0 SDK](https://www.microsoft.com/net/download/core)
+- [.NET Core 2.0 CLI](https://www.microsoft.com/net/download/core)
 
 # Build
 The solution can be build and run directly from Visual Studio 2017 with support .net core 2.0
