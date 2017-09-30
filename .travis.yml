@@ -1,4 +1,4 @@
-language: csharp
+No FTP/deployment user setlanguage: csharp
 dist: trusty
 mono: none
 dotnet: 2.0.0
@@ -7,5 +7,6 @@ install:
 script:
 - dotnet build
 - dotnet test Hiring.Cloud.CodeChallenge.Test/Hiring.Cloud.CodeChallenge.Test.csproj
-
+deploy:
+  provider: azure_web_apps
 
