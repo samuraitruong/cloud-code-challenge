@@ -1,4 +1,4 @@
-# cloud-code-challenge
+# .NET Core 2.0 Sample project
 
 [![Build Status](https://travis-ci.org/samuraitruong/cloud-code-challenge.svg?branch=master)](https://travis-ci.org/samuraitruong/cloud-code-challenge)
 
@@ -35,7 +35,14 @@ Test can also run wit compiled Test assembly
 
 # CI & Deploy
 
-This project is pre-configure with (https://travis-ci.org "Travis CI")
+This project is pre-configure with (https://travis-ci.org "Travis CI").
+When the build finish, Travis will deploy to azure website. Make sure you setup Azure Username, Password, and Sitename inside Travis Setting. Read more about Travis Azure deployment here - (https://docs.travis-ci.com/user/deployment/azure-web-apps/)
+
+This repository is deployed  at (http://cloudcodechallenge.azurewebsites.net)
+
+The sample API can be access from (http://cloudcodechallenge.azurewebsites.net/api/cars)
+
+
 
 
 
