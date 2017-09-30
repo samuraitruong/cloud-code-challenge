@@ -31,12 +31,13 @@ for example , to run program with Production config, we can execute below comman
 
 `set ASPNETCORE_ENVIRONMENT=Development && dotnet Hiring.Cloud.CodeChallenge.MVC.dll`
 
-#Test
+# Test
 The Test project is implemented with [XUnit](https://xunit.github.io) can be execute from source with Net Core CLI
 
 `dotnet test Hiring.Cloud.CodeChallenge.Test/Hiring.Cloud.CodeChallenge.Test.csproj`
 
 Test can also run wit compiled Test assembly
+
 `dotnet test Hiring.Cloud.CodeChallenge.Test/bin/Debug/netcoreapp2.0/Hiring.Cloud.CodeChallenge.Test.dll`
 
 # CI & Deploy
