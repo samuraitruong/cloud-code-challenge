@@ -9,7 +9,7 @@ If you don't have visual studio 2017 install on machine, Solution can be built w
 
 `dotnet restore && dot build`
 
-Read more about (https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build?tabs=netcore2x#tabpanel_mTshLtg2eu_netcore2x ".NET Core Build")
+Read more about [.NET Core Build](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build?tabs=netcore2x#tabpanel_mTshLtg2eu_netcore2x)
 
 # Run
 This project is build base on .NET core 2.0 can be ran cross platform on window, Linux, Mac OS and any platform that support by .NET core CLI
@@ -26,7 +26,7 @@ for example , to run program with Production config, we can execute below comman
 `set ASPNETCORE_ENVIRONMENT=Development && dotnet Hiring.Cloud.CodeChallenge.MVC.dll`
 
 #Test
-The Test project is implemented with (https://xunit.github.io "XUnit") can be execute from source with Net Core CLI
+The Test project is implemented with [Xunit](https://xunit.github.io) can be execute from source with Net Core CLI
 
 `dotnet test Hiring.Cloud.CodeChallenge.Test/Hiring.Cloud.CodeChallenge.Test.csproj`
 
@@ -36,7 +36,7 @@ Test can also run wit compiled Test assembly
 # CI & Deploy
 
 This project is pre-configure with (https://travis-ci.org "Travis CI").
-When the build finish, Travis will deploy to azure website. Make sure you setup Azure Username, Password, and Sitename inside Travis Setting. Read more about Travis Azure deployment here - (https://docs.travis-ci.com/user/deployment/azure-web-apps/)
+When the build finish, Travis will deploy to azure website. Make sure you setup Azure Username, Password, and Sitename inside Travis Setting. Read more about [Travis Azure deployment](https://docs.travis-ci.com/user/deployment/azure-web-apps/)
 
 This repository is deployed  at (http://cloudcodechallenge.azurewebsites.net)
 
