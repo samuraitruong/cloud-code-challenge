@@ -22,7 +22,7 @@ This project is build base on .NET core 2.0 can be ran cross platform on window,
 
 after build , to to output folder of MVC project
 
-`cd Hiring.Cloud.CodeChallenge/Hiring.Cloud.CodeChallenge.MVC/bin/debug/dotnetcore2.0`
+`cd Hiring.Cloud.CodeChallenge/Hiring.Cloud.CodeChallenge.MVC/bin/Debug/netcoreapp2.0`
 `dotnet Hiring.Cloud.CodeChallenge.MVC.dll`
 
 # Environement configs
@@ -32,12 +32,12 @@ for example , to run program with Production config, we can execute below comman
 `set ASPNETCORE_ENVIRONMENT=Development && dotnet Hiring.Cloud.CodeChallenge.MVC.dll`
 
 #Test
-The Test project is implemented with [Xunit](https://xunit.github.io) can be execute from source with Net Core CLI
+The Test project is implemented with [XUnit](https://xunit.github.io) can be execute from source with Net Core CLI
 
 `dotnet test Hiring.Cloud.CodeChallenge.Test/Hiring.Cloud.CodeChallenge.Test.csproj`
 
 Test can also run wit compiled Test assembly
-`dotnet test Hiring.Cloud.CodeChallenge.Test/bin/debug/Hiring.Cloud.CodeChallenge.Test.dll`
+`dotnet test Hiring.Cloud.CodeChallenge.Test/bin/Debug/netcoreapp2.0/Hiring.Cloud.CodeChallenge.Test.dll`
 
 # CI & Deploy
 
