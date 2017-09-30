@@ -19,8 +19,9 @@ namespace Hiring.Cloud.CodeChallenge.MVC.Controllers
         }
 
         [HttpGet]
-		public JsonResult Get()
+		public JsonResult Index()
 		{
+            // In the real work project, We may handle exception outside of service and return the proper error code /content.
             return Json(this.service.FetchData().ToOwnerList());
 		}
     }

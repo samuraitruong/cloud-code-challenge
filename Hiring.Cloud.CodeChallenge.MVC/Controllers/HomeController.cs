@@ -14,8 +14,8 @@ namespace Hiring.Cloud.CodeChallenge.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        ServiceConfig serviceConfig;
-        IDataService dataService;
+        readonly ServiceConfig serviceConfig;
+        readonly IDataService dataService;
 
         public HomeController(IOptions<ServiceConfig> serviceConfig, IDataService dataService) {
             this.serviceConfig = serviceConfig.Value;
@@ -29,11 +29,6 @@ namespace Hiring.Cloud.CodeChallenge.MVC.Controllers
                 
             return View(viewModel);
         }
-
-        public JsonResult test()
-		{
-            return Json(this.dataService.FetchData());
-		}
 
         public IActionResult About()
         {
