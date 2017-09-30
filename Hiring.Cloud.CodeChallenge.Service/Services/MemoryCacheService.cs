@@ -12,7 +12,7 @@ namespace Hiring.Cloud.CodeChallenge.Service.Services
     public class MemoryCacheService : ICacheService
     {
         // This is just an example to centralize all cache inside 1 single place, IMemory can be injected inside Controller and use directly from there.
-        const string DATA_CACHE_NAME = "DATA_CACHE_NAME";
+        public const string DATA_CACHE_NAME = "DATA_CACHE_NAME";
 
 		private IMemoryCache cache;
         readonly ServiceConfig config;

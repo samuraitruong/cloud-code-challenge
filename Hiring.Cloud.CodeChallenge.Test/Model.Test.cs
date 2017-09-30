@@ -2,7 +2,8 @@
 using Hiring.Cloud.CodeChallenge.Model.Models;
 using Newtonsoft.Json;
 using Xunit;
-
+using System.Collections.Generic;
+using Hiring.Cloud.CodeChallenge.Model.Interfaces;
 namespace Hiring.Cloud.CodeChallenge.Test
 {
     /// <summary>
@@ -85,6 +86,6 @@ namespace Hiring.Cloud.CodeChallenge.Test
             var list = JsonConvert.DeserializeObject<ServiceResponse>(input);
             Assert.Empty(list);
         }
-
+       
     }
 }

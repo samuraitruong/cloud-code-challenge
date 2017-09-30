@@ -8,6 +8,7 @@ using Hiring.Cloud.CodeChallenge.Common;
 using Newtonsoft.Json;
 using System.Linq;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Logging;
 
 namespace Hiring.Cloud.CodeChallenge.Service.Services
 {
@@ -18,12 +19,15 @@ namespace Hiring.Cloud.CodeChallenge.Service.Services
 		readonly HttpClient client;
         readonly ServiceConfig config;
         readonly ICacheService cacheService;
+        readonly ILogger<DataService> logger;
 
         public DataService(HttpClient client,
                            IOptions<ServiceConfig> serviceConfig, 
-                           ICacheService cacheService
+                           ICacheService cacheService,
+                           ILogger<DataService> logger
                           )
         {
+            this.logger = logger;
             this.client = client;
             this.config = serviceConfig.Value;
             this.cacheService = cacheService;
@@ -41,12 +45,23 @@ namespace Hiring.Cloud.CodeChallenge.Service.Services
 				var cachedData = cacheService.GetServiceData();
                 if (cachedData != null) return cachedData;
             }
-
-            // .Result will block thread
-            var content = this.client.GetStringAsync(GET_CARS_ENDPOINT).Result;
-            var result = JsonConvert.DeserializeObject<ServiceResponse>(content);
-            var castedList = new List<IOwner>(result);
-            var flatten = castedList.ToFlattenList();
+            List<IOwner> ownersList = null;
+            try
+            {
+                var content = this.client.GetStringAsync(GET_CARS_ENDPOINT).Result;
+                var response = JsonConvert.DeserializeObject<ServiceResponse>(content);
+                ownersList = new List<IOwner>(response);
+            }
+            catch(JsonReaderException ex)
+            {
+                // Because in real application, Each type of Exceptions will have separate logic to haldle Login so we have to catch all exception separately instead of using just Exception object
+                logger.LogWarning(ex, ex.Message);
+            }
+            catch(AggregateException ex)
+            {
+                logger.LogError(ex, ex.Message);
+            }
+            var flatten = ownersList.ToFlattenList();
 
             cacheService.CacheServiceData((flatten));
 

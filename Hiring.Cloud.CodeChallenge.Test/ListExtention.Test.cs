@@ -10,9 +10,6 @@ namespace Hiring.Cloud.CodeChallenge.Test
 {
     public class ListExtention
     {
-
-		
-        
         [Fact]
         public void AddItemToDictionary_ShouldAddItem_WhenInputValid()
         {
@@ -138,8 +135,17 @@ namespace Hiring.Cloud.CodeChallenge.Test
 
 			Assert.Equal(3, flatten.Count);
 		}
-		
-		[Fact]
+
+        [Fact]
+        public void ToFlattenList_ShouldReturnEmptyList_WhenInputIsNull()
+        {
+            List<IOwner> input = null;
+            var flatten = input.ToFlattenList();
+
+            Assert.Empty(flatten);
+        }
+
+        [Fact]
 		public void ToFlattenList_ShouldConvertCorrectValue_WhenInputsValid()
 		{
 			List<IOwner> input = new List<IOwner>() {
@@ -155,7 +161,35 @@ namespace Hiring.Cloud.CodeChallenge.Test
 
             Assert.Equal("Truong Nguyen", result.OwnerName);
 		}
+        [Fact]
+        public void ToOwnerList_ShouldHas2Item()
+        {
+            List<IData> data = new List<IData>()
+            {
+                new Data() {BrandName = "Toyota", Color="Red", OwnerName = "User1"},
+                new Data() {BrandName = "BMW", Color="Red", OwnerName = "User2"},
+            };
 
+            var owners = data.ToOwnerList();
 
-	}
+            Assert.Equal(2, owners.Count);
+        }
+        // In the real project, To make unit test code clean and reuse, We may have to build the data sample insite the json file and using it inside the code.
+
+        [Fact]
+        public void ToOwnerList_ShouldHas1Item()
+        {
+            List<IData> data = new List<IData>()
+            {
+                new Data() {BrandName = "Toyota", Color="Red", OwnerName = "User1"},
+                new Data() {BrandName = "BMW", Color="Red", OwnerName = "User1"},
+            };
+
+            var owners = data.ToOwnerList();
+
+            Assert.Single(owners);
+            Assert.Equal(2, owners.First().Cars.Count);
+        }
+
+    }
 }

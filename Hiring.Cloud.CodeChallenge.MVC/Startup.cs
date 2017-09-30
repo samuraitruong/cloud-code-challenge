@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace Hiring.Cloud.CodeChallenge.MVC
 {
@@ -20,12 +21,13 @@ namespace Hiring.Cloud.CodeChallenge.MVC
     {
         public Startup(IHostingEnvironment env)
         {
-			// Set up configuration sources.
-			var builder = new ConfigurationBuilder()
-				.SetBasePath(Path.Combine(env.ContentRootPath, "Configs"))
-				.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            // Set up configuration sources. Dont need this step if we keep configure file in root level
 
-			Configuration = builder.Build();
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Path.Combine(env.ContentRootPath, "Configs"))
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+            Configuration = builder.Build();
         }
 
         public IConfigurationRoot Configuration { get; set; }
@@ -42,7 +44,6 @@ namespace Hiring.Cloud.CodeChallenge.MVC
 
             services.AddTransient<IDataService, DataService>();
             services.AddTransient<IOwner, Owner>();
-            //services.AddTransient<List<IOwner>, List<Owner>>();
             services.AddTransient<ICar, Car>();
             services.AddTransient<ICacheService, MemoryCacheService>();
 

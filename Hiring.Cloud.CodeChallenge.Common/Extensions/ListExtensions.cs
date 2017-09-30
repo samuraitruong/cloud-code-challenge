@@ -54,6 +54,7 @@ namespace Hiring.Cloud.CodeChallenge.Common
 		/// <returns>The flatten list with IData type</returns>
 		/// <param name="data">Input is he list of IOwner, this is raw structure return from service example here - https://kloudcodingtest.azurewebsites.net/api/cars.</param>
 		public static List<IData> ToFlattenList(this List<IOwner> data) {
+            if (data == null) return new List<IData>();
 
             var flattenData = data.SelectMany(owner => owner.Cars.Select(car => new Data() {
                 OwnerName = owner.Name,
@@ -72,7 +73,6 @@ namespace Hiring.Cloud.CodeChallenge.Common
         /// <param name="data">Flatten list IList</param>
         public static List<IOwner> ToOwnerList(this List<IData> data)
 		{
-
             var grouped = data.GroupBy(p => p.OwnerName);
 
             var list = grouped.Select(group => new Owner(group.Select(item => new Car() { Brand = item.BrandName, Color = item.Color }).ToList())
