@@ -20,6 +20,7 @@ namespace Hiring.Cloud.CodeChallenge.Service.Services
         readonly ServiceConfig config;
         readonly ICacheService cacheService;
         readonly ILogger<DataService> logger;
+        Object threadSafeLock = new object();
 
         public DataService(HttpClient client,
                            IOptions<ServiceConfig> serviceConfig, 
@@ -40,32 +41,36 @@ namespace Hiring.Cloud.CodeChallenge.Service.Services
         ///
         public List<IData> FetchData()
         {
-            if(config.EnableCache) {
-				// Sometime , Depend on the project , I may add the callback is the Func<T> to re-cache expired object
-				var cachedData = cacheService.GetServiceData();
-                if (cachedData != null) return cachedData;
-            }
-            List<IOwner> ownersList = null;
-            try
+            lock (threadSafeLock)
             {
-                var content = this.client.GetStringAsync(GET_CARS_ENDPOINT).Result;
-                var response = JsonConvert.DeserializeObject<ServiceResponse>(content);
-                ownersList = new List<IOwner>(response);
-            }
-            catch(JsonReaderException ex)
-            {
-                // Because in real application, Each type of Exceptions will have separate logic to haldle Login so we have to catch all exception separately instead of using just Exception object
-                logger.LogWarning(ex, ex.Message);
-            }
-            catch(AggregateException ex)
-            {
-                logger.LogError(ex, ex.Message);
-            }
-            var flatten = ownersList.ToFlattenList();
+                if (config.EnableCache)
+                {
+                    // Sometime , Depend on the project , I may add the callback is the Func<T> to re-cache expired object
+                    var cachedData = cacheService.GetServiceData();
+                    if (cachedData != null) return cachedData;
+                }
+                List<IOwner> ownersList = null;
+                try
+                {
+                    var content = this.client.GetStringAsync(GET_CARS_ENDPOINT).Result;
+                    var response = JsonConvert.DeserializeObject<ServiceResponse>(content);
+                    ownersList = new List<IOwner>(response);
+                }
+                catch (JsonReaderException ex)
+                {
+                    // Because in real application, Each type of Exceptions will have separate logic to haldle Login so we have to catch all exception separately instead of using just Exception object
+                    logger.LogWarning(ex, ex.Message);
+                }
+                catch (AggregateException ex)
+                {
+                    logger.LogError(ex, ex.Message);
+                }
+                var flatten = ownersList.ToFlattenList();
 
-            cacheService.CacheServiceData((flatten));
+                cacheService.CacheServiceData((flatten));
 
-            return flatten;
+                return flatten;
+            }
         }
 
     }
