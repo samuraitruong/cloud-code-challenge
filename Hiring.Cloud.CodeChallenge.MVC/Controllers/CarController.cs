@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Hiring.Cloud.CodeChallenge.Service.Interfaces;
 using Hiring.Cloud.CodeChallenge.Common;
+using System.Threading.Tasks;
 
 namespace Hiring.Cloud.CodeChallenge.MVC.Controllers
 {
@@ -19,10 +20,14 @@ namespace Hiring.Cloud.CodeChallenge.MVC.Controllers
         }
 
         [HttpGet]
-		public JsonResult Index()
+		public async Task<JsonResult> Index()
 		{
+            // We catch all exception inside the FetchData, So we dont need handle exception here, However, Depend on requirement, We may have to implement exception flow inside api layer.
+
+            var data = await this.service.FetchDataAsync();
+
             // In the real work project, We may handle exception outside of service and return the proper error code /content.
-            return Json(this.service.FetchData().ToOwnerList());
+            return Json(data.ToOwnerList());
 		}
     }
 }
