@@ -6,7 +6,7 @@ install:
 - dotnet restore
 script:
 - dotnet build
-- dotnet test Hiring.Cloud.CodeChallenge.Test/Hiring.Cloud.CodeChallenge.Test.csproj
+- dotnet test Hiring.Kloud.CodeChallenge.Test/Hiring.Kloud.CodeChallenge.Test.csproj
 deploy:
   provider: azure_web_apps
 notifications:

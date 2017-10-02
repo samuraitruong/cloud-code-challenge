@@ -1,0 +1,55 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiring.Kloud.CodeChallenge.Model", "Hiring.Kloud.CodeChallenge.Model\Hiring.Kloud.CodeChallenge.Model.csproj", "{62292CE5-4042-4D3E-887A-BAD42AED978C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiring.Kloud.CodeChallenge.Service", "Hiring.Kloud.CodeChallenge.Service\Hiring.Kloud.CodeChallenge.Service.csproj", "{35C622D1-4403-41FC-B513-83857CFCDFAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiring.Kloud.CodeChallenge.MVC", "Hiring.Kloud.CodeChallenge.MVC\Hiring.Kloud.CodeChallenge.MVC.csproj", "{BE55909B-9D09-4B7F-AEEB-47A48E1C84A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiring.Kloud.CodeChallenge.Common", "Hiring.Kloud.CodeChallenge.Common\Hiring.Kloud.CodeChallenge.Common.csproj", "{F0AC0087-C56A-443C-B4F9-15FF63CEFFA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiring.Kloud.CodeChallenge.Test", "Hiring.Kloud.CodeChallenge.Test\Hiring.Kloud.CodeChallenge.Test.csproj", "{F678CDB0-31BF-471D-BA43-0F1E259FD431}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Builds", "Builds", "{EB3E6823-A73E-443A-BFA7-2A2C19C0005D}"
+	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
+		build\build.sh = build\build.sh
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62292CE5-4042-4D3E-887A-BAD42AED978C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62292CE5-4042-4D3E-887A-BAD42AED978C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62292CE5-4042-4D3E-887A-BAD42AED978C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62292CE5-4042-4D3E-887A-BAD42AED978C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35C622D1-4403-41FC-B513-83857CFCDFAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C622D1-4403-41FC-B513-83857CFCDFAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C622D1-4403-41FC-B513-83857CFCDFAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C622D1-4403-41FC-B513-83857CFCDFAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE55909B-9D09-4B7F-AEEB-47A48E1C84A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE55909B-9D09-4B7F-AEEB-47A48E1C84A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE55909B-9D09-4B7F-AEEB-47A48E1C84A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE55909B-9D09-4B7F-AEEB-47A48E1C84A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0AC0087-C56A-443C-B4F9-15FF63CEFFA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0AC0087-C56A-443C-B4F9-15FF63CEFFA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0AC0087-C56A-443C-B4F9-15FF63CEFFA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0AC0087-C56A-443C-B4F9-15FF63CEFFA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F678CDB0-31BF-471D-BA43-0F1E259FD431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F678CDB0-31BF-471D-BA43-0F1E259FD431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F678CDB0-31BF-471D-BA43-0F1E259FD431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F678CDB0-31BF-471D-BA43-0F1E259FD431}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77FFD57C-7636-471B-B914-57DBE0B05381}
+	EndGlobalSection
+EndGlobal

@@ -22,7 +22,7 @@ This project is build base on .NET core 2.0 can be ran cross platform on window,
 
 after build , to to output folder of MVC project
 
-`cd Hiring.Cloud.CodeChallenge/Hiring.Cloud.CodeChallenge.MVC/bin/Debug/netcoreapp2.0`
+`cd Hiring.Kloud.CodeChallenge/Hiring.Kloud.CodeChallenge.MVC/bin/Debug/netcoreapp2.0`
 `dotnet Hiring.Cloud.CodeChallenge.MVC.dll`
 
 # Environement configs
@@ -38,7 +38,7 @@ The Test project is implemented with [XUnit](https://xunit.github.io) can be exe
 
 Test can also run wit compiled Test assembly
 
-`dotnet test Hiring.Cloud.CodeChallenge.Test/bin/Debug/netcoreapp2.0/Hiring.Cloud.CodeChallenge.Test.dll`
+`dotnet test Hiring.Kloud.CodeChallenge.Test/bin/Debug/netcoreapp2.0/Hiring.Kloud.CodeChallenge.Test.dll`
 
 # CI & Deploy
 
@@ -48,13 +48,3 @@ When the build finish, Travis will deploy to azure website. Make sure you setup 
 This repository is deployed  at (http://cloudcodechallenge.azurewebsites.net)
 
 The sample API can be access from (http://cloudcodechallenge.azurewebsites.net/api/cars)
-
-
-
-
-
-
-
-
-
-
