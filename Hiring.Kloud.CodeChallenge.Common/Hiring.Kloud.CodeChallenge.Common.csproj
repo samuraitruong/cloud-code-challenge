@@ -11,6 +11,6 @@
     <PackageReference Include="System.Collections" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Model\Hiring.Kloud.CodeChallenge.Model.csproj" />
+    <ProjectReference Include="..\Hiring.Kloud.CodeChallenge.Model\Hiring.Kloud.CodeChallenge.Model.csproj" />
   </ItemGroup>
 </Project>

@@ -9,13 +9,13 @@
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Model\Hiring.Kloud.CodeChallenge.Model.csproj" />
-    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Common\Hiring.Kloud.CodeChallenge.Common.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.0.0" />
     <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hiring.Kloud.CodeChallenge.Common\Hiring.Kloud.CodeChallenge.Common.csproj" />
+    <ProjectReference Include="..\Hiring.Kloud.CodeChallenge.Model\Hiring.Kloud.CodeChallenge.Model.csproj" />
   </ItemGroup>
 </Project>

@@ -20,13 +20,13 @@
     <Folder Include="Configs\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Model\Hiring.Kloud.CodeChallenge.Model.csproj" />
-    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Common\Hiring.Kloud.CodeChallenge.Common.csproj" />
-    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Service\Hiring.Kloud.CodeChallenge.Service.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Update="Configs\appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hiring.Kloud.CodeChallenge.Common\Hiring.Kloud.CodeChallenge.Common.csproj" />
+    <ProjectReference Include="..\Hiring.Kloud.CodeChallenge.Model\Hiring.Kloud.CodeChallenge.Model.csproj" />
+    <ProjectReference Include="..\Hiring.Kloud.CodeChallenge.Service\Hiring.Kloud.CodeChallenge.Service.csproj" />
   </ItemGroup>
 </Project>

@@ -23,9 +23,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Common\Hiring.Kloud.CodeChallenge.Common.csproj" />
-    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Model\Hiring.Kloud.CodeChallenge.Model.csproj" />
-    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.MVC\Hiring.Kloud.CodeChallenge.MVC.csproj" />
-    <ProjectReference Include="..\Hiring.Cloud.CodeChallenge.Service\Hiring.Kloud.CodeChallenge.Service.csproj" />
+    <ProjectReference Include="..\Hiring.Kloud.CodeChallenge.Common\Hiring.Kloud.CodeChallenge.Common.csproj" />
+    <ProjectReference Include="..\Hiring.Kloud.CodeChallenge.Model\Hiring.Kloud.CodeChallenge.Model.csproj" />
+    <ProjectReference Include="..\Hiring.Kloud.CodeChallenge.MVC\Hiring.Kloud.CodeChallenge.MVC.csproj" />
+    <ProjectReference Include="..\Hiring.Kloud.CodeChallenge.Service\Hiring.Kloud.CodeChallenge.Service.csproj" />
   </ItemGroup>
 </Project>
